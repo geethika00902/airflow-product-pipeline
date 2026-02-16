@@ -76,3 +76,5 @@ with DAG(
 
     [load_mobiles, load_laptops, load_refrigerators, load_tvs] \
         >> load_products_main >> load_price_history
+
+# test auto deployment
