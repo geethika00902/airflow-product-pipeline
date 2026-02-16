@@ -1,0 +1,19 @@
+name: Deploy Airflow Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Copy DAGs
+        run: |
+          xcopy dags C:\airflow_project\dags /E /I /Y
+          xcopy scripts C:\airflow_project\scripts /E /I /Y
