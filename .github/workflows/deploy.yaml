@@ -13,7 +13,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Copy DAGs
+      - name: Copy DAGs to Airflow Project
+        shell: powershell
         run: |
-          if not exist C:\airflow_project\dags mkdir C:\airflow_project\dags
-          xcopy /E /I /Y dags C:\airflow_project\dags
+          $source = "$env:GITHUB_WORKSPACE\dags"
+          $destination = "C:\airflow_project\dags"
+
+          if (!(Test-Path $destination)) {
+              New-Item -ItemType Directory -Path $destination
+          }
+
+          Copy-Item -Path "$source\*" -Destination $destination -Recurse -Force
