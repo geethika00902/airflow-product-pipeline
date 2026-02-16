@@ -1,0 +1,37 @@
+[2026-02-11T06:41:28.955+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-11T06:41:29.010+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.create_main_table manual__2026-02-11T06:34:35.116821+00:00 [queued]>
+[2026-02-11T06:41:29.022+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.create_main_table manual__2026-02-11T06:34:35.116821+00:00 [queued]>
+[2026-02-11T06:41:29.023+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2026-02-11T06:41:29.038+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): create_main_table> on 2026-02-11 06:34:35.116821+00:00
+[2026-02-11T06:41:29.056+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=873) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-11T06:41:29.052+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'create_main_table', 'manual__2026-02-11T06:34:35.116821+00:00', '--job-id', '121', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmpozev57cd']
+[2026-02-11T06:41:29.058+0000] {standard_task_runner.py:64} INFO - Started process 874 to run task
+[2026-02-11T06:41:29.059+0000] {standard_task_runner.py:91} INFO - Job 121: Subtask create_main_table
+[2026-02-11T06:41:29.237+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.create_main_table manual__2026-02-11T06:34:35.116821+00:00 [running]> on host 4662a8e9d10d
+[2026-02-11T06:41:29.374+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='create_main_table' AIRFLOW_CTX_EXECUTION_DATE='2026-02-11T06:34:35.116821+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-11T06:34:35.116821+00:00'
+[2026-02-11T06:41:29.376+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-11T06:41:29.394+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-11T06:41:29.397+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/scripts/create_main_table.py']
+[2026-02-11T06:41:29.413+0000] {subprocess.py:86} INFO - Output:
+[2026-02-11T06:41:29.513+0000] {subprocess.py:93} INFO - python: can't open file '/opt/***/dags/scripts/create_main_table.py': [Errno 2] No such file or directory
+[2026-02-11T06:41:29.517+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2026-02-11T06:41:29.519+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-11T06:41:29.531+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2026-02-11T06:41:29.539+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=product_price_pipeline, task_id=create_main_table, run_id=manual__2026-02-11T06:34:35.116821+00:00, execution_date=20260211T063435, start_date=20260211T064129, end_date=20260211T064129
+[2026-02-11T06:41:29.559+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 121 for task create_main_table (Bash command failed. The command returned a non-zero exit code 2.; 874)
+[2026-02-11T06:41:29.600+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-02-11T06:41:29.635+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-11T06:41:29.644+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

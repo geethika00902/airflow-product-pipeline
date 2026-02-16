@@ -1,0 +1,26 @@
+[2026-02-13T12:04:54.456+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-13T12:04:54.866+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.clean_tvs manual__2026-02-13T12:04:50.772068+00:00 [queued]>
+[2026-02-13T12:04:54.887+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.clean_tvs manual__2026-02-13T12:04:50.772068+00:00 [queued]>
+[2026-02-13T12:04:54.889+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-02-13T12:04:54.983+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): clean_tvs> on 2026-02-13 12:04:50.772068+00:00
+[2026-02-13T12:04:55.011+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=397) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-13T12:04:55.008+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'clean_tvs', 'manual__2026-02-13T12:04:50.772068+00:00', '--job-id', '109', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmp7hy41mkk']
+[2026-02-13T12:04:55.015+0000] {standard_task_runner.py:91} INFO - Job 109: Subtask clean_tvs
+[2026-02-13T12:04:55.014+0000] {standard_task_runner.py:64} INFO - Started process 400 to run task
+[2026-02-13T12:04:55.333+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.clean_tvs manual__2026-02-13T12:04:50.772068+00:00 [running]> on host c65c0f674c92
+[2026-02-13T12:04:55.872+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='clean_tvs' AIRFLOW_CTX_EXECUTION_DATE='2026-02-13T12:04:50.772068+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-13T12:04:50.772068+00:00'
+[2026-02-13T12:04:55.879+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-13T12:04:56.180+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-13T12:04:56.187+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/scripts/cleaning/clean_tvs.py']
+[2026-02-13T12:04:56.341+0000] {subprocess.py:86} INFO - Output:
+[2026-02-13T12:05:07.146+0000] {subprocess.py:93} INFO - 🔥 clean_tvs.py STARTED 🔥
+[2026-02-13T12:05:07.172+0000] {subprocess.py:93} INFO - 📥 INPUT FILE: /opt/***/dags/data/raw/tvs/television_2026-02-11.csv
+[2026-02-13T12:05:07.189+0000] {subprocess.py:93} INFO - 📊 Rows loaded: 210
+[2026-02-13T12:05:07.192+0000] {subprocess.py:93} INFO - ✅ CLEAN FILE SAVED: /opt/***/dags/data/clean/tvs_cleaned_television_2026-02-11.csv
+[2026-02-13T12:05:07.196+0000] {subprocess.py:93} INFO - 🔥 clean_tvs.py FINISHED 🔥
+[2026-02-13T12:05:07.806+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-02-13T12:05:07.823+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-13T12:05:07.999+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=product_price_pipeline, task_id=clean_tvs, run_id=manual__2026-02-13T12:04:50.772068+00:00, execution_date=20260213T120450, start_date=20260213T120454, end_date=20260213T120507
+[2026-02-13T12:05:08.117+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-13T12:05:08.357+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-13T12:05:08.367+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

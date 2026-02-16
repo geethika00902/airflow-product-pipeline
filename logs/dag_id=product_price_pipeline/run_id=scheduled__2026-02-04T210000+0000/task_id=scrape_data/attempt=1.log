@@ -1,0 +1,285 @@
+[2026-02-06T16:35:20.510+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-06T16:35:21.273+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [queued]>
+[2026-02-06T16:35:21.301+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [queued]>
+[2026-02-06T16:35:21.305+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-02-06T16:35:21.367+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): scrape_data> on 2026-02-04 21:00:00+00:00
+[2026-02-06T16:35:21.396+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'scrape_data', 'scheduled__2026-02-04T21:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmp_7q3sv35']
+[2026-02-06T16:35:21.403+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask scrape_data
+[2026-02-06T16:35:21.413+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=1053) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-06T16:35:21.416+0000] {standard_task_runner.py:64} INFO - Started process 1054 to run task
+[2026-02-06T16:35:21.972+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [running]> on host e9a5f9d3aaa8
+[2026-02-06T16:35:22.379+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='scrape_data' AIRFLOW_CTX_EXECUTION_DATE='2026-02-04T21:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-04T21:00:00+00:00'
+[2026-02-06T16:35:22.392+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-06T16:35:22.691+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-06T16:35:22.699+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/scripts/scrape.py']
+[2026-02-06T16:35:22.748+0000] {subprocess.py:86} INFO - Output:
+[2026-02-06T16:35:23.582+0000] {subprocess.py:93} INFO - python: can't open file '/opt/***/scripts/scrape.py': [Errno 2] No such file or directory
+[2026-02-06T16:35:23.591+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2026-02-06T16:35:23.600+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-06T16:35:23.619+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2026-02-06T16:35:23.647+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=product_price_pipeline, task_id=scrape_data, run_id=scheduled__2026-02-04T21:00:00+00:00, execution_date=20260204T210000, start_date=20260206T163521, end_date=20260206T163523
+[2026-02-06T16:35:23.671+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 2 for task scrape_data (Bash command failed. The command returned a non-zero exit code 2.; 1054)
+[2026-02-06T16:35:23.720+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-02-06T16:35:23.800+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-06T16:35:23.809+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-02-06T16:46:21.057+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-06T16:46:21.105+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [queued]>
+[2026-02-06T16:46:21.116+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [queued]>
+[2026-02-06T16:46:21.117+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-02-06T16:46:21.133+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): scrape_data> on 2026-02-04 21:00:00+00:00
+[2026-02-06T16:46:21.144+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'scrape_data', 'scheduled__2026-02-04T21:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmp1e63cbf6']
+[2026-02-06T16:46:21.147+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=1184) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-06T16:46:21.151+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask scrape_data
+[2026-02-06T16:46:21.152+0000] {standard_task_runner.py:64} INFO - Started process 1185 to run task
+[2026-02-06T16:46:21.330+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [running]> on host e9a5f9d3aaa8
+[2026-02-06T16:46:21.434+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='scrape_data' AIRFLOW_CTX_EXECUTION_DATE='2026-02-04T21:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-04T21:00:00+00:00'
+[2026-02-06T16:46:21.436+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-06T16:46:21.452+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-06T16:46:21.457+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/all_data.py']
+[2026-02-06T16:46:21.471+0000] {subprocess.py:86} INFO - Output:
+[2026-02-06T16:46:21.530+0000] {subprocess.py:93} INFO - python: can't open file '/opt/***/dags/all_data.py': [Errno 2] No such file or directory
+[2026-02-06T16:46:21.534+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2026-02-06T16:46:21.537+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-06T16:46:21.547+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2026-02-06T16:46:21.552+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=product_price_pipeline, task_id=scrape_data, run_id=scheduled__2026-02-04T21:00:00+00:00, execution_date=20260204T210000, start_date=20260206T164621, end_date=20260206T164621
+[2026-02-06T16:46:21.564+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 7 for task scrape_data (Bash command failed. The command returned a non-zero exit code 2.; 1185)
+[2026-02-06T16:46:21.573+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-02-06T16:46:21.602+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-06T16:46:21.606+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-02-06T16:52:58.493+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-06T16:52:58.549+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [queued]>
+[2026-02-06T16:52:58.567+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [queued]>
+[2026-02-06T16:52:58.569+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-02-06T16:52:58.593+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): scrape_data> on 2026-02-04 21:00:00+00:00
+[2026-02-06T16:52:58.615+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'scrape_data', 'scheduled__2026-02-04T21:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmptg0bvksd']
+[2026-02-06T16:52:58.620+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=1264) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-06T16:52:58.621+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask scrape_data
+[2026-02-06T16:52:58.622+0000] {standard_task_runner.py:64} INFO - Started process 1265 to run task
+[2026-02-06T16:52:58.738+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [running]> on host e9a5f9d3aaa8
+[2026-02-06T16:52:58.879+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='scrape_data' AIRFLOW_CTX_EXECUTION_DATE='2026-02-04T21:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-04T21:00:00+00:00'
+[2026-02-06T16:52:58.882+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-06T16:52:58.933+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-06T16:52:58.952+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/all_data.py']
+[2026-02-06T16:52:58.973+0000] {subprocess.py:86} INFO - Output:
+[2026-02-06T16:52:59.090+0000] {subprocess.py:93} INFO - python: can't open file '/opt/***/dags/all_data.py': [Errno 2] No such file or directory
+[2026-02-06T16:52:59.099+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2026-02-06T16:52:59.101+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-06T16:52:59.120+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2026-02-06T16:52:59.125+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=product_price_pipeline, task_id=scrape_data, run_id=scheduled__2026-02-04T21:00:00+00:00, execution_date=20260204T210000, start_date=20260206T165258, end_date=20260206T165259
+[2026-02-06T16:52:59.141+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 12 for task scrape_data (Bash command failed. The command returned a non-zero exit code 2.; 1265)
+[2026-02-06T16:52:59.160+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-02-06T16:52:59.185+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-06T16:52:59.189+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-02-06T17:09:26.127+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-06T17:09:26.187+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [queued]>
+[2026-02-06T17:09:26.197+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [queued]>
+[2026-02-06T17:09:26.199+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-02-06T17:09:26.217+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): scrape_data> on 2026-02-04 21:00:00+00:00
+[2026-02-06T17:09:26.227+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=1464) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-06T17:09:26.226+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'scrape_data', 'scheduled__2026-02-04T21:00:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmp2hi3ksdr']
+[2026-02-06T17:09:26.229+0000] {standard_task_runner.py:64} INFO - Started process 1465 to run task
+[2026-02-06T17:09:26.230+0000] {standard_task_runner.py:91} INFO - Job 27: Subtask scrape_data
+[2026-02-06T17:09:26.372+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [running]> on host e9a5f9d3aaa8
+[2026-02-06T17:09:26.535+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='scrape_data' AIRFLOW_CTX_EXECUTION_DATE='2026-02-04T21:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-04T21:00:00+00:00'
+[2026-02-06T17:09:26.536+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-06T17:09:26.561+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-06T17:09:26.566+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/all_data.py']
+[2026-02-06T17:09:26.580+0000] {subprocess.py:86} INFO - Output:
+[2026-02-06T17:09:27.478+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:27,477 | INFO | ===== SCRAPING STARTED =====
+[2026-02-06T17:09:27.480+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:27,478 | INFO | Starting scrape for category: mobiles
+[2026-02-06T17:09:28.010+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:28,009 | INFO | mobiles: Page 1/25
+[2026-02-06T17:09:28.540+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:28,540 | INFO | mobiles: Page 2/25
+[2026-02-06T17:09:29.370+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:29,370 | INFO | mobiles: Page 3/25
+[2026-02-06T17:09:30.134+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:30,133 | INFO | mobiles: Page 4/25
+[2026-02-06T17:09:30.810+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:30,810 | INFO | mobiles: Page 5/25
+[2026-02-06T17:09:31.573+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:31,573 | INFO | mobiles: Page 6/25
+[2026-02-06T17:09:32.309+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:32,309 | INFO | mobiles: Page 7/25
+[2026-02-06T17:09:33.120+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:33,120 | INFO | mobiles: Page 8/25
+[2026-02-06T17:09:33.824+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:33,824 | INFO | mobiles: Page 9/25
+[2026-02-06T17:09:34.558+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:34,557 | INFO | mobiles: Page 10/25
+[2026-02-06T17:09:35.269+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:35,268 | INFO | mobiles: Page 11/25
+[2026-02-06T17:09:36.040+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:36,040 | INFO | mobiles: Page 12/25
+[2026-02-06T17:09:36.888+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:36,887 | INFO | mobiles: Page 13/25
+[2026-02-06T17:09:37.599+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:37,598 | INFO | mobiles: Page 14/25
+[2026-02-06T17:09:38.279+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:38,279 | INFO | mobiles: Page 15/25
+[2026-02-06T17:09:38.984+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:38,983 | INFO | mobiles: Page 16/25
+[2026-02-06T17:09:39.666+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:39,666 | INFO | mobiles: Page 17/25
+[2026-02-06T17:09:40.281+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:40,280 | INFO | mobiles: Page 18/25
+[2026-02-06T17:09:40.874+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:40,873 | INFO | mobiles: Page 19/25
+[2026-02-06T17:09:41.518+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:41,517 | INFO | mobiles: Page 20/25
+[2026-02-06T17:09:42.124+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:42,123 | INFO | mobiles: Page 21/25
+[2026-02-06T17:09:42.777+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:42,776 | INFO | mobiles: Page 22/25
+[2026-02-06T17:09:43.426+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:43,426 | INFO | mobiles: Page 23/25
+[2026-02-06T17:09:44.034+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:44,033 | INFO | mobiles: Page 24/25
+[2026-02-06T17:09:44.679+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:44,678 | INFO | mobiles: Page 25/25
+[2026-02-06T17:09:45.362+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:45,361 | INFO | mobiles: Fetching reviews
+[2026-02-06T17:09:58.758+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:58,758 | INFO | mobiles: Saved 750 rows to /opt/***/dags/data/raw/mobiles/mobiles_2026-02-06.csv
+[2026-02-06T17:09:58.760+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:58,759 | INFO | Starting scrape for category: laptops
+[2026-02-06T17:09:59.089+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:59,089 | INFO | laptops: Page 1/14
+[2026-02-06T17:09:59.561+0000] {subprocess.py:93} INFO - 2026-02-06 17:09:59,561 | INFO | laptops: Page 2/14
+[2026-02-06T17:10:00.487+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:00,487 | INFO | laptops: Page 3/14
+[2026-02-06T17:10:01.067+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:01,066 | INFO | laptops: Page 4/14
+[2026-02-06T17:10:01.906+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:01,906 | INFO | laptops: Page 5/14
+[2026-02-06T17:10:03.030+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:03,029 | INFO | laptops: Page 6/14
+[2026-02-06T17:10:03.636+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:03,635 | INFO | laptops: Page 7/14
+[2026-02-06T17:10:04.411+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:04,410 | INFO | laptops: Page 8/14
+[2026-02-06T17:10:05.114+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:05,113 | INFO | laptops: Page 9/14
+[2026-02-06T17:10:06.456+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:06,456 | INFO | laptops: Page 10/14
+[2026-02-06T17:10:07.356+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:07,355 | INFO | laptops: Page 11/14
+[2026-02-06T17:10:09.034+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:09,034 | INFO | laptops: Page 12/14
+[2026-02-06T17:10:09.910+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:09,909 | INFO | laptops: Page 13/14
+[2026-02-06T17:10:10.839+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:10,838 | INFO | laptops: Page 14/14
+[2026-02-06T17:10:12.444+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:12,444 | INFO | laptops: Fetching reviews
+[2026-02-06T17:10:20.559+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:20,559 | INFO | laptops: Saved 420 rows to /opt/***/dags/data/raw/laptops/laptops_2026-02-06.csv
+[2026-02-06T17:10:20.561+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:20,560 | INFO | Starting scrape for category: television
+[2026-02-06T17:10:20.926+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:20,926 | INFO | television: Page 1/7
+[2026-02-06T17:10:21.393+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:21,392 | INFO | television: Page 2/7
+[2026-02-06T17:10:22.161+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:22,160 | INFO | television: Page 3/7
+[2026-02-06T17:10:22.792+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:22,791 | INFO | television: Page 4/7
+[2026-02-06T17:10:23.748+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:23,747 | INFO | television: Page 5/7
+[2026-02-06T17:10:24.610+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:24,610 | INFO | television: Page 6/7
+[2026-02-06T17:10:25.474+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:25,473 | INFO | television: Page 7/7
+[2026-02-06T17:10:29.398+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:29,397 | INFO | television: Fetching reviews
+[2026-02-06T17:10:33.406+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:33,406 | INFO | television: Saved 210 rows to /opt/***/dags/data/raw/tvs/television_2026-02-06.csv
+[2026-02-06T17:10:33.408+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:33,407 | INFO | Starting scrape for category: refrigerator
+[2026-02-06T17:10:33.784+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:33,784 | INFO | refrigerator: Page 1/6
+[2026-02-06T17:10:34.648+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:34,647 | INFO | refrigerator: Page 2/6
+[2026-02-06T17:10:35.304+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:35,304 | INFO | refrigerator: Page 3/6
+[2026-02-06T17:10:35.970+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:35,969 | INFO | refrigerator: Page 4/6
+[2026-02-06T17:10:37.152+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:37,152 | INFO | refrigerator: Page 5/6
+[2026-02-06T17:10:37.761+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:37,760 | INFO | refrigerator: Page 6/6
+[2026-02-06T17:10:38.390+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:38,390 | INFO | refrigerator: Fetching reviews
+[2026-02-06T17:10:41.191+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:41,191 | INFO | refrigerator: Saved 180 rows to /opt/***/dags/data/raw/refrigerators/refrigerator_2026-02-06.csv
+[2026-02-06T17:10:41.193+0000] {subprocess.py:93} INFO - 2026-02-06 17:10:41,191 | INFO | ===== SCRAPING FINISHED =====
+[2026-02-06T17:10:41.224+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-02-06T17:10:41.228+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-06T17:10:41.255+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=product_price_pipeline, task_id=scrape_data, run_id=scheduled__2026-02-04T21:00:00+00:00, execution_date=20260204T210000, start_date=20260206T170926, end_date=20260206T171041
+[2026-02-06T17:10:41.296+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-06T17:10:41.345+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-06T17:10:41.351+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-02-06T17:32:20.164+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-06T17:32:20.309+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [queued]>
+[2026-02-06T17:32:20.323+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [queued]>
+[2026-02-06T17:32:20.324+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-02-06T17:32:20.343+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): scrape_data> on 2026-02-04 21:00:00+00:00
+[2026-02-06T17:32:20.367+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'scrape_data', 'scheduled__2026-02-04T21:00:00+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmphv_6jhbf']
+[2026-02-06T17:32:20.380+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=226) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-06T17:32:20.381+0000] {standard_task_runner.py:91} INFO - Job 35: Subtask scrape_data
+[2026-02-06T17:32:20.382+0000] {standard_task_runner.py:64} INFO - Started process 227 to run task
+[2026-02-06T17:32:20.913+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.scrape_data scheduled__2026-02-04T21:00:00+00:00 [running]> on host 98d950a68588
+[2026-02-06T17:32:21.253+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='scrape_data' AIRFLOW_CTX_EXECUTION_DATE='2026-02-04T21:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-04T21:00:00+00:00'
+[2026-02-06T17:32:21.256+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-06T17:32:21.274+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-06T17:32:21.277+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/all_data.py']
+[2026-02-06T17:32:21.292+0000] {subprocess.py:86} INFO - Output:
+[2026-02-06T17:32:22.412+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:22,412 | INFO | ===== SCRAPING STARTED =====
+[2026-02-06T17:32:22.414+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:22,412 | INFO | Starting scrape for category: mobiles
+[2026-02-06T17:32:22.592+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:22,592 | INFO | mobiles: Page 1/25
+[2026-02-06T17:32:23.312+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:23,311 | INFO | mobiles: Page 2/25
+[2026-02-06T17:32:24.136+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:24,135 | INFO | mobiles: Page 3/25
+[2026-02-06T17:32:24.874+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:24,874 | INFO | mobiles: Page 4/25
+[2026-02-06T17:32:25.488+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:25,488 | INFO | mobiles: Page 5/25
+[2026-02-06T17:32:26.587+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:26,587 | INFO | mobiles: Page 6/25
+[2026-02-06T17:32:27.155+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:27,154 | INFO | mobiles: Page 7/25
+[2026-02-06T17:32:27.840+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:27,840 | INFO | mobiles: Page 8/25
+[2026-02-06T17:32:28.407+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:28,407 | INFO | mobiles: Page 9/25
+[2026-02-06T17:32:29.044+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:29,044 | INFO | mobiles: Page 10/25
+[2026-02-06T17:32:29.648+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:29,647 | INFO | mobiles: Page 11/25
+[2026-02-06T17:32:30.445+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:30,444 | INFO | mobiles: Page 12/25
+[2026-02-06T17:32:31.261+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:31,261 | INFO | mobiles: Page 13/25
+[2026-02-06T17:32:31.800+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:31,800 | INFO | mobiles: Page 14/25
+[2026-02-06T17:32:32.578+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:32,578 | INFO | mobiles: Page 15/25
+[2026-02-06T17:32:33.059+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:33,059 | INFO | mobiles: Page 16/25
+[2026-02-06T17:32:33.574+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:33,574 | INFO | mobiles: Page 17/25
+[2026-02-06T17:32:34.107+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:34,106 | INFO | mobiles: Page 18/25
+[2026-02-06T17:32:34.667+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:34,666 | INFO | mobiles: Page 19/25
+[2026-02-06T17:32:35.368+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:35,367 | INFO | mobiles: Page 20/25
+[2026-02-06T17:32:36.543+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:36,543 | INFO | mobiles: Page 21/25
+[2026-02-06T17:32:37.100+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:37,099 | INFO | mobiles: Page 22/25
+[2026-02-06T17:32:37.711+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:37,711 | INFO | mobiles: Page 23/25
+[2026-02-06T17:32:38.265+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:38,264 | INFO | mobiles: Page 24/25
+[2026-02-06T17:32:38.904+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:38,904 | INFO | mobiles: Page 25/25
+[2026-02-06T17:32:39.491+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:39,491 | INFO | mobiles: Fetching reviews
+[2026-02-06T17:32:54.625+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:54,624 | INFO | mobiles: Saved 750 rows to /opt/***/dags/data/raw/mobiles/mobiles_2026-02-06.csv
+[2026-02-06T17:32:54.628+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:54,626 | INFO | Starting scrape for category: laptops
+[2026-02-06T17:32:55.306+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:55,306 | INFO | laptops: Page 1/14
+[2026-02-06T17:32:55.983+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:55,983 | INFO | laptops: Page 2/14
+[2026-02-06T17:32:56.578+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:56,577 | INFO | laptops: Page 3/14
+[2026-02-06T17:32:59.376+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:59,376 | INFO | laptops: Page 4/14
+[2026-02-06T17:32:59.842+0000] {subprocess.py:93} INFO - 2026-02-06 17:32:59,842 | INFO | laptops: Page 5/14
+[2026-02-06T17:33:00.353+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:00,353 | INFO | laptops: Page 6/14
+[2026-02-06T17:33:00.882+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:00,881 | INFO | laptops: Page 7/14
+[2026-02-06T17:33:01.379+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:01,378 | INFO | laptops: Page 8/14
+[2026-02-06T17:33:01.899+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:01,899 | INFO | laptops: Page 9/14
+[2026-02-06T17:33:02.450+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:02,449 | INFO | laptops: Page 10/14
+[2026-02-06T17:33:02.970+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:02,969 | INFO | laptops: Page 11/14
+[2026-02-06T17:33:03.506+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:03,506 | INFO | laptops: Page 12/14
+[2026-02-06T17:33:03.997+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:03,996 | INFO | laptops: Page 13/14
+[2026-02-06T17:33:04.525+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:04,525 | INFO | laptops: Page 14/14
+[2026-02-06T17:33:05.034+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:05,034 | INFO | laptops: Fetching reviews
+[2026-02-06T17:33:12.337+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:12,337 | INFO | laptops: Saved 420 rows to /opt/***/dags/data/raw/laptops/laptops_2026-02-06.csv
+[2026-02-06T17:33:12.339+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:12,337 | INFO | Starting scrape for category: television
+[2026-02-06T17:33:13.531+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:13,531 | INFO | television: Page 1/7
+[2026-02-06T17:33:13.996+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:13,995 | INFO | television: Page 2/7
+[2026-02-06T17:33:14.487+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:14,487 | INFO | television: Page 3/7
+[2026-02-06T17:33:14.955+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:14,954 | INFO | television: Page 4/7
+[2026-02-06T17:33:15.443+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:15,443 | INFO | television: Page 5/7
+[2026-02-06T17:33:15.921+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:15,921 | INFO | television: Page 6/7
+[2026-02-06T17:33:16.391+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:16,391 | INFO | television: Page 7/7
+[2026-02-06T17:33:17.050+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:17,049 | INFO | television: Fetching reviews
+[2026-02-06T17:33:22.459+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:22,459 | INFO | television: Saved 210 rows to /opt/***/dags/data/raw/tvs/television_2026-02-06.csv
+[2026-02-06T17:33:22.461+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:22,460 | INFO | Starting scrape for category: refrigerator
+[2026-02-06T17:33:22.666+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:22,665 | INFO | refrigerator: Page 1/6
+[2026-02-06T17:33:23.116+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:23,115 | INFO | refrigerator: Page 2/6
+[2026-02-06T17:33:23.579+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:23,579 | INFO | refrigerator: Page 3/6
+[2026-02-06T17:33:24.168+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:24,167 | INFO | refrigerator: Page 4/6
+[2026-02-06T17:33:24.730+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:24,729 | INFO | refrigerator: Page 5/6
+[2026-02-06T17:33:25.242+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:25,242 | INFO | refrigerator: Page 6/6
+[2026-02-06T17:33:25.821+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:25,821 | INFO | refrigerator: Fetching reviews
+[2026-02-06T17:33:28.847+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:28,846 | INFO | refrigerator: Saved 180 rows to /opt/***/dags/data/raw/refrigerators/refrigerator_2026-02-06.csv
+[2026-02-06T17:33:28.849+0000] {subprocess.py:93} INFO - 2026-02-06 17:33:28,847 | INFO | ===== SCRAPING FINISHED =====
+[2026-02-06T17:33:28.898+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-02-06T17:33:28.902+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-06T17:33:28.945+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=product_price_pipeline, task_id=scrape_data, run_id=scheduled__2026-02-04T21:00:00+00:00, execution_date=20260204T210000, start_date=20260206T173220, end_date=20260206T173328
+[2026-02-06T17:33:29.029+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-06T17:33:29.051+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-06T17:33:29.063+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

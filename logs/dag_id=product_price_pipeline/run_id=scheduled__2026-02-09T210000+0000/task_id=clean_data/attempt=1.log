@@ -1,0 +1,56 @@
+[2026-02-11T04:02:57.108+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-11T04:02:57.659+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.clean_data scheduled__2026-02-09T21:00:00+00:00 [queued]>
+[2026-02-11T04:02:57.739+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.clean_data scheduled__2026-02-09T21:00:00+00:00 [queued]>
+[2026-02-11T04:02:57.755+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-02-11T04:02:57.888+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): clean_data> on 2026-02-09 21:00:00+00:00
+[2026-02-11T04:02:58.020+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'clean_data', 'scheduled__2026-02-09T21:00:00+00:00', '--job-id', '104', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmp4pm0wgci']
+[2026-02-11T04:02:58.077+0000] {standard_task_runner.py:91} INFO - Job 104: Subtask clean_data
+[2026-02-11T04:02:58.103+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=1067) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-11T04:02:58.110+0000] {standard_task_runner.py:64} INFO - Started process 1068 to run task
+[2026-02-11T04:02:58.921+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.clean_data scheduled__2026-02-09T21:00:00+00:00 [running]> on host 0d4fb0100b45
+[2026-02-11T04:02:59.545+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='clean_data' AIRFLOW_CTX_EXECUTION_DATE='2026-02-09T21:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-09T21:00:00+00:00'
+[2026-02-11T04:02:59.551+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-11T04:02:59.788+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-11T04:02:59.855+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/scripts/clean.py']
+[2026-02-11T04:02:59.948+0000] {subprocess.py:86} INFO - Output:
+[2026-02-11T04:03:01.477+0000] {subprocess.py:93} INFO - python: can't open file '/tmp/***tmp3ed0ysdz/scripts/cleaning/clean_mobiles.py': [Errno 2] No such file or directory
+[2026-02-11T04:03:01.679+0000] {subprocess.py:93} INFO - python: can't open file '/tmp/***tmp3ed0ysdz/scripts/cleaning/clean_laptops.py': [Errno 2] No such file or directory
+[2026-02-11T04:03:01.835+0000] {subprocess.py:93} INFO - python: can't open file '/tmp/***tmp3ed0ysdz/scripts/cleaning/clean_refrigerators.py': [Errno 2] No such file or directory
+[2026-02-11T04:03:02.052+0000] {subprocess.py:93} INFO - python: can't open file '/tmp/***tmp3ed0ysdz/scripts/cleaning/clean_tvs.py': [Errno 2] No such file or directory
+[2026-02-11T04:03:02.252+0000] {subprocess.py:93} INFO - python: can't open file '/tmp/***tmp3ed0ysdz/scripts/cleaning/create_main_table.py': [Errno 2] No such file or directory
+[2026-02-11T04:03:02.264+0000] {subprocess.py:93} INFO - Starting cleaning stage...
+[2026-02-11T04:03:02.266+0000] {subprocess.py:93} INFO - Cleaning stage completed.
+[2026-02-11T04:03:02.281+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-02-11T04:03:02.291+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-11T04:03:02.369+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=product_price_pipeline, task_id=clean_data, run_id=scheduled__2026-02-09T21:00:00+00:00, execution_date=20260209T210000, start_date=20260211T040257, end_date=20260211T040302
+[2026-02-11T04:03:02.431+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-11T04:03:02.582+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-11T04:03:02.593+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-02-11T09:11:50.419+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-11T09:11:50.532+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.clean_data scheduled__2026-02-09T21:00:00+00:00 [queued]>
+[2026-02-11T09:11:50.547+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.clean_data scheduled__2026-02-09T21:00:00+00:00 [queued]>
+[2026-02-11T09:11:50.549+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-02-11T09:11:50.584+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): clean_data> on 2026-02-09 21:00:00+00:00
+[2026-02-11T09:11:50.616+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'clean_data', 'scheduled__2026-02-09T21:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmp82bbuox7']
+[2026-02-11T09:11:50.623+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask clean_data
+[2026-02-11T09:11:50.625+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=474) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-11T09:11:50.626+0000] {standard_task_runner.py:64} INFO - Started process 485 to run task
+[2026-02-11T09:11:50.804+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.clean_data scheduled__2026-02-09T21:00:00+00:00 [running]> on host 44d7ec503a6d
+[2026-02-11T09:11:50.965+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='clean_data' AIRFLOW_CTX_EXECUTION_DATE='2026-02-09T21:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-09T21:00:00+00:00'
+[2026-02-11T09:11:50.968+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-11T09:11:51.011+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-11T09:11:51.021+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/scripts/clean.py']
+[2026-02-11T09:11:51.036+0000] {subprocess.py:86} INFO - Output:
+[2026-02-11T09:11:51.576+0000] {subprocess.py:93} INFO - python: can't open file '/tmp/***tmp4go7bcbe/scripts/cleaning/clean_mobiles.py': [Errno 2] No such file or directory
+[2026-02-11T09:11:51.704+0000] {subprocess.py:93} INFO - python: can't open file '/tmp/***tmp4go7bcbe/scripts/cleaning/clean_laptops.py': [Errno 2] No such file or directory
+[2026-02-11T09:11:51.799+0000] {subprocess.py:93} INFO - python: can't open file '/tmp/***tmp4go7bcbe/scripts/cleaning/clean_refrigerators.py': [Errno 2] No such file or directory
+[2026-02-11T09:11:51.905+0000] {subprocess.py:93} INFO - python: can't open file '/tmp/***tmp4go7bcbe/scripts/cleaning/clean_tvs.py': [Errno 2] No such file or directory
+[2026-02-11T09:11:52.006+0000] {subprocess.py:93} INFO - python: can't open file '/tmp/***tmp4go7bcbe/scripts/cleaning/create_main_table.py': [Errno 2] No such file or directory
+[2026-02-11T09:11:52.013+0000] {subprocess.py:93} INFO - Starting cleaning stage...
+[2026-02-11T09:11:52.015+0000] {subprocess.py:93} INFO - Cleaning stage completed.
+[2026-02-11T09:11:52.026+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-02-11T09:11:52.044+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-11T09:11:52.101+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=product_price_pipeline, task_id=clean_data, run_id=scheduled__2026-02-09T21:00:00+00:00, execution_date=20260209T210000, start_date=20260211T091150, end_date=20260211T091152
+[2026-02-11T09:11:52.142+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-11T09:11:52.196+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-11T09:11:52.202+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

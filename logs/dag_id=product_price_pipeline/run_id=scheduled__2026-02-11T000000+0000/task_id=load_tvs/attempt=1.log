@@ -1,0 +1,59 @@
+[2026-02-12T12:35:43.494+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-12T12:35:43.784+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.load_tvs scheduled__2026-02-11T00:00:00+00:00 [queued]>
+[2026-02-12T12:35:43.867+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.load_tvs scheduled__2026-02-11T00:00:00+00:00 [queued]>
+[2026-02-12T12:35:43.873+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-02-12T12:35:43.968+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): load_tvs> on 2026-02-11 00:00:00+00:00
+[2026-02-12T12:35:44.025+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'load_tvs', 'scheduled__2026-02-11T00:00:00+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmpql_r1nt2']
+[2026-02-12T12:35:44.041+0000] {standard_task_runner.py:91} INFO - Job 24: Subtask load_tvs
+[2026-02-12T12:35:44.060+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=1919) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-12T12:35:44.066+0000] {standard_task_runner.py:64} INFO - Started process 1952 to run task
+[2026-02-12T12:35:44.407+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.load_tvs scheduled__2026-02-11T00:00:00+00:00 [running]> on host 3d6faed2cc37
+[2026-02-12T12:35:44.786+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='load_tvs' AIRFLOW_CTX_EXECUTION_DATE='2026-02-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-11T00:00:00+00:00'
+[2026-02-12T12:35:44.794+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-12T12:35:44.838+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-12T12:35:44.855+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/scripts/loaders/load_tvs.py']
+[2026-02-12T12:35:44.887+0000] {subprocess.py:86} INFO - Output:
+[2026-02-12T12:35:56.956+0000] {subprocess.py:93} INFO - 🚀 Loading TELEVISIONS data
+[2026-02-12T12:35:56.982+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-02-12T12:35:56.987+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/scripts/loaders/load_tvs.py", line 18, in <module>
+[2026-02-12T12:35:56.993+0000] {subprocess.py:93} INFO -     df = pd.read_csv(csv_files[-1])
+[2026-02-12T12:35:56.998+0000] {subprocess.py:93} INFO -          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-02-12T12:35:57.002+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+[2026-02-12T12:35:57.004+0000] {subprocess.py:93} INFO -     return _read(filepath_or_buffer, kwds)
+[2026-02-12T12:35:57.006+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-02-12T12:35:57.008+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 617, in _read
+[2026-02-12T12:35:57.011+0000] {subprocess.py:93} INFO -     return parser.read(nrows)
+[2026-02-12T12:35:57.018+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^
+[2026-02-12T12:35:57.019+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1748, in read
+[2026-02-12T12:35:57.021+0000] {subprocess.py:93} INFO -     ) = self._engine.read(  # type: ignore[attr-defined]
+[2026-02-12T12:35:57.024+0000] {subprocess.py:93} INFO -         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-02-12T12:35:57.030+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+[2026-02-12T12:35:57.034+0000] {subprocess.py:93} INFO -     chunks = self._reader.read_low_memory(nrows)
+[2026-02-12T12:35:57.036+0000] {subprocess.py:93} INFO -              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-02-12T12:35:57.039+0000] {subprocess.py:93} INFO -   File "parsers.pyx", line 843, in pandas._libs.parsers.TextReader.read_low_memory
+[2026-02-12T12:35:57.042+0000] {subprocess.py:93} INFO -   File "parsers.pyx", line 904, in pandas._libs.parsers.TextReader._read_rows
+[2026-02-12T12:35:57.043+0000] {subprocess.py:93} INFO -   File "parsers.pyx", line 879, in pandas._libs.parsers.TextReader._tokenize_rows
+[2026-02-12T12:35:57.047+0000] {subprocess.py:93} INFO -   File "parsers.pyx", line 890, in pandas._libs.parsers.TextReader._check_tokenize_status
+[2026-02-12T12:35:57.048+0000] {subprocess.py:93} INFO -   File "parsers.pyx", line 2058, in pandas._libs.parsers.raise_parser_error
+[2026-02-12T12:35:57.049+0000] {subprocess.py:93} INFO - pandas.errors.ParserError: Error tokenizing data. C error: Expected 16 fields in line 45, saw 31
+[2026-02-12T12:35:57.054+0000] {subprocess.py:93} INFO - 
+[2026-02-12T12:35:57.510+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-02-12T12:35:57.525+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-12T12:35:57.696+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-02-12T12:35:57.746+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=product_price_pipeline, task_id=load_tvs, run_id=scheduled__2026-02-11T00:00:00+00:00, execution_date=20260211T000000, start_date=20260212T123543, end_date=20260212T123557
+[2026-02-12T12:35:57.868+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 24 for task load_tvs (Bash command failed. The command returned a non-zero exit code 1.; 1952)
+[2026-02-12T12:35:57.914+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-02-12T12:35:57.973+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

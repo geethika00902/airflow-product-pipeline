@@ -1,0 +1,23 @@
+[2026-02-13T03:57:43.351+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-13T03:57:43.641+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.load_products_main scheduled__2026-02-12T00:00:00+00:00 [queued]>
+[2026-02-13T03:57:43.675+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.load_products_main scheduled__2026-02-12T00:00:00+00:00 [queued]>
+[2026-02-13T03:57:43.677+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2026-02-13T03:57:43.728+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): load_products_main> on 2026-02-12 00:00:00+00:00
+[2026-02-13T03:57:43.758+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=6372) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-13T03:57:43.763+0000] {standard_task_runner.py:64} INFO - Started process 6373 to run task
+[2026-02-13T03:57:43.760+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'load_products_main', 'scheduled__2026-02-12T00:00:00+00:00', '--job-id', '103', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmp4kdb36o0']
+[2026-02-13T03:57:43.765+0000] {standard_task_runner.py:91} INFO - Job 103: Subtask load_products_main
+[2026-02-13T03:57:43.960+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.load_products_main scheduled__2026-02-12T00:00:00+00:00 [running]> on host 8ede547b0251
+[2026-02-13T03:57:44.213+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='load_products_main' AIRFLOW_CTX_EXECUTION_DATE='2026-02-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-12T00:00:00+00:00'
+[2026-02-13T03:57:44.215+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-13T03:57:44.291+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-13T03:57:44.297+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/scripts/loaders/load_products_main.py']
+[2026-02-13T03:57:44.340+0000] {subprocess.py:86} INFO - Output:
+[2026-02-13T03:57:46.797+0000] {subprocess.py:93} INFO - 🚀 Loading PRODUCTS_MAIN table
+[2026-02-13T03:57:46.800+0000] {subprocess.py:93} INFO - ✅ products_main table loaded successfully
+[2026-02-13T03:57:46.824+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-02-13T03:57:46.828+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-13T03:57:46.904+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=product_price_pipeline, task_id=load_products_main, run_id=scheduled__2026-02-12T00:00:00+00:00, execution_date=20260212T000000, start_date=20260213T035743, end_date=20260213T035746
+[2026-02-13T03:57:46.982+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-13T03:57:47.080+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-13T03:57:47.093+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

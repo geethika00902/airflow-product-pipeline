@@ -1,0 +1,25 @@
+[2026-02-12T15:14:33.926+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-12T15:14:34.091+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.load_mobiles manual__2026-02-12T15:14:18.073360+00:00 [queued]>
+[2026-02-12T15:14:34.130+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.load_mobiles manual__2026-02-12T15:14:18.073360+00:00 [queued]>
+[2026-02-12T15:14:34.132+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-02-12T15:14:34.190+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): load_mobiles> on 2026-02-12 15:14:18.073360+00:00
+[2026-02-12T15:14:34.247+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'load_mobiles', 'manual__2026-02-12T15:14:18.073360+00:00', '--job-id', '89', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmp10_7vmfk']
+[2026-02-12T15:14:34.261+0000] {standard_task_runner.py:91} INFO - Job 89: Subtask load_mobiles
+[2026-02-12T15:14:34.269+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=516) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-12T15:14:34.271+0000] {standard_task_runner.py:64} INFO - Started process 520 to run task
+[2026-02-12T15:14:34.434+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.load_mobiles manual__2026-02-12T15:14:18.073360+00:00 [running]> on host 8ede547b0251
+[2026-02-12T15:14:34.662+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='load_mobiles' AIRFLOW_CTX_EXECUTION_DATE='2026-02-12T15:14:18.073360+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-12T15:14:18.073360+00:00'
+[2026-02-12T15:14:34.666+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-12T15:14:34.707+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-12T15:14:34.713+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/scripts/loaders/load_mobiles.py']
+[2026-02-12T15:14:34.738+0000] {subprocess.py:86} INFO - Output:
+[2026-02-12T15:14:38.801+0000] {subprocess.py:93} INFO - /opt/***/dags/scripts/loaders/load_mobiles.py:46: RemovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+[2026-02-12T15:14:38.803+0000] {subprocess.py:93} INFO -   conn.execute("TRUNCATE TABLE mobiles RESTART IDENTITY CASCADE")
+[2026-02-12T15:14:39.874+0000] {subprocess.py:93} INFO - 🚀 Loading MOBILES data
+[2026-02-12T15:14:39.877+0000] {subprocess.py:93} INFO - ✅ Mobiles table refreshed successfully
+[2026-02-12T15:14:40.430+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-02-12T15:14:40.440+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-12T15:14:40.549+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=product_price_pipeline, task_id=load_mobiles, run_id=manual__2026-02-12T15:14:18.073360+00:00, execution_date=20260212T151418, start_date=20260212T151434, end_date=20260212T151440
+[2026-02-12T15:14:40.618+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-12T15:14:40.684+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-12T15:14:40.689+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

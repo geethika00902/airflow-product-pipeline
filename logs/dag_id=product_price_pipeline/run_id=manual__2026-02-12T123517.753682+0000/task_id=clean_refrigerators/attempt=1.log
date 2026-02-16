@@ -1,0 +1,25 @@
+[2026-02-12T12:35:22.862+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-12T12:35:23.787+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: product_price_pipeline.clean_refrigerators manual__2026-02-12T12:35:17.753682+00:00 [queued]>
+[2026-02-12T12:35:23.836+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: product_price_pipeline.clean_refrigerators manual__2026-02-12T12:35:17.753682+00:00 [queued]>
+[2026-02-12T12:35:23.837+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-02-12T12:35:23.972+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): clean_refrigerators> on 2026-02-12 12:35:17.753682+00:00
+[2026-02-12T12:35:24.201+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=1794) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-12T12:35:24.223+0000] {standard_task_runner.py:64} INFO - Started process 1806 to run task
+[2026-02-12T12:35:24.213+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'product_price_pipeline', 'clean_refrigerators', 'manual__2026-02-12T12:35:17.753682+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/product_pipeline_dag.py', '--cfg-path', '/tmp/tmp03vybp5v']
+[2026-02-12T12:35:24.293+0000] {standard_task_runner.py:91} INFO - Job 18: Subtask clean_refrigerators
+[2026-02-12T12:35:24.973+0000] {task_command.py:426} INFO - Running <TaskInstance: product_price_pipeline.clean_refrigerators manual__2026-02-12T12:35:17.753682+00:00 [running]> on host 3d6faed2cc37
+[2026-02-12T12:35:26.033+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='product_price_pipeline' AIRFLOW_CTX_TASK_ID='clean_refrigerators' AIRFLOW_CTX_EXECUTION_DATE='2026-02-12T12:35:17.753682+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-12T12:35:17.753682+00:00'
+[2026-02-12T12:35:26.040+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-12T12:35:26.418+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-12T12:35:26.439+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/scripts/cleaning/clean_refrigerators.py']
+[2026-02-12T12:35:26.542+0000] {subprocess.py:86} INFO - Output:
+[2026-02-12T12:35:38.196+0000] {subprocess.py:93} INFO - 🔥 clean_refrigerators.py STARTED 🔥
+[2026-02-12T12:35:38.246+0000] {subprocess.py:93} INFO - 📥 INPUT FILE: /opt/***/dags/data/raw/refrigerators/refrigerator_2026-02-11.csv
+[2026-02-12T12:35:38.266+0000] {subprocess.py:93} INFO - 📊 Rows loaded: 180
+[2026-02-12T12:35:38.279+0000] {subprocess.py:93} INFO - ✅ CLEAN FILE SAVED: /opt/***/dags/data/clean/refrigerators_cleaned_refrigerator_2026-02-11.csv
+[2026-02-12T12:35:38.290+0000] {subprocess.py:93} INFO - 🔥 clean_refrigerators.py FINISHED 🔥
+[2026-02-12T12:35:39.537+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-02-12T12:35:39.553+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-12T12:35:39.894+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=product_price_pipeline, task_id=clean_refrigerators, run_id=manual__2026-02-12T12:35:17.753682+00:00, execution_date=20260212T123517, start_date=20260212T123523, end_date=20260212T123539
+[2026-02-12T12:35:40.104+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-02-12T12:35:40.227+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
