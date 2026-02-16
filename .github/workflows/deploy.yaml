@@ -9,12 +9,11 @@ jobs:
   deploy:
     runs-on: self-hosted
 
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-steps:
-  - name: Checkout Repository
-    uses: actions/checkout@v3
-
-  - name: Copy DAGs
-    run: |
-      if not exist C:\airflow_project\dags mkdir C:\airflow_project\dags
-      xcopy /E /I /Y dags C:\airflow_project\dags
+      - name: Copy DAGs
+        run: |
+          if not exist C:\airflow_project\dags mkdir C:\airflow_project\dags
+          xcopy /E /I /Y dags C:\airflow_project\dags
