@@ -78,6 +78,8 @@ refrigerators
 televisions
 
 price_history
+
+
 What I Learned
 
 Building data pipelines with Apache Airflow
